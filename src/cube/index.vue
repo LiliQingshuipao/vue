@@ -16,18 +16,23 @@
     .cube{
         .body{
             height: 100%;
-            width:100%;
+            width:50%;
+            display: inline-block;
+            float: left;
         }
         .editor{
-            width:50%;
+            width:100%;
             height: 33.3%;
             box-sizing: border-box;
+           
             padding-top: 30px;
             position: relative;
         }
         .perviewBox{
             width:50%;
             height: 100%;
+            float: right;
+            display: inline-block;
             box-sizing:border-box;
         }
     }
@@ -79,12 +84,19 @@ export default {
               js:jsInput,
               less:less
           }
-          this.$http.post('/first',params).then(res => {
-                console.log(res)
-                this.perview = res.body.name
-                this.$refs.pre.setHtml(this.perview)
-                console.log('success')
-          })
+          let obj = {
+              html:html,
+              js:jsInput,
+              css:less,
+          }
+          console.log(obj)
+          this.$refs.pre.setHtml(obj)
+        //   this.$http.post('/first',params).then(res => {
+        //         console.log(res)
+        //         this.perview = res.body.name
+        //         this.$refs.pre.setHtml(this.perview)
+        //         console.log('success')
+        //   })
       }
     },
     mounted(){
