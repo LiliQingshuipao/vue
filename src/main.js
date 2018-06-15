@@ -10,7 +10,9 @@ import './cube/components'
 import "./less/app.less"
 import $ from 'jquery'
 import Less from 'less'
+import './components/';
 console.log(Less)
+window.$ = $;
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.use(VueResource)
