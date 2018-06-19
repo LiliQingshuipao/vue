@@ -27,6 +27,29 @@ export default new Router({
         component:resolve => {
           require(["../cube/pages/drag"], resolve)
         }
+      },{
+        path: 'project',
+        component: resolve => {
+          require(['../cube/pages/projects/index'], resolve)
+        },
+        children:[{
+          path: 'details',
+          component: resolve => {
+            require(['../cube/pages/projects/details/index'], resolve)
+          },
+          children:[{
+            path: 'worksheet',
+            component: resolve => {
+              require(['../cube/pages/projects/details/worksheet/index'], resolve)
+            },
+            children:[{
+              path: 'list',
+              component: resolve => {
+                require(['../cube/pages/projects/details/worksheet/list/index'], resolve)
+              }
+            }]
+          }]
+        }]
       }],
     }
   ]
