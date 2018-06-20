@@ -16,7 +16,19 @@
             </el-col>
             <el-col :span="8">
                 <div class="grid-content sort-box">
-                    <span>排序</span>
+                    <!-- <span>排序</span> -->
+                    <el-dropdown trigger="click" placement="bottom">
+                        <span class="el-dropdown-link">
+                            <i class="el-icon-sort-down"></i>默认
+                        </span>
+                        <el-dropdown-menu slot="dropdown">
+                            <el-dropdown-item>默认</el-dropdown-item>
+                            <el-dropdown-item>创建时间</el-dropdown-item>
+                            <el-dropdown-item>编辑时间</el-dropdown-item>
+                            <el-dropdown-item>文件名</el-dropdown-item>
+                            <el-dropdown-item>创建者</el-dropdown-item>
+                        </el-dropdown-menu>
+                    </el-dropdown>
                     <span>列表</span>
                 </div>
             </el-col>
@@ -103,7 +115,7 @@ export default {
         showType:{
             type:Array,
             default:()=>[]
-        }
+        },
     },
     data(){
         return {

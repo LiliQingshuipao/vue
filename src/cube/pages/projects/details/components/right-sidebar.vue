@@ -8,8 +8,14 @@
                     <li>新建工作表</li>
                 </ul>
             </el-collapse-transition> -->
-           
-            <el-dropdown placement="bottom" trigger="click">
+           <el-popover trigger="click" popper-class="right-sidebar__dropdown-menu" :visible-arrow="false">
+                <ul class="">
+                    <li>新建文件夹</li>
+                    <li>新建工作表</li>
+                </ul>
+                <el-button slot="reference">+ 新建</el-button>
+            </el-popover>
+            <!-- <el-dropdown placement="bottom" trigger="click">
                 <el-button >
                     + 新建
                 </el-button>
@@ -17,7 +23,7 @@
                     <el-dropdown-item>新建文件夹</el-dropdown-item>
                     <el-dropdown-item>新建工作表</el-dropdown-item>
                 </el-dropdown-menu>
-            </el-dropdown>
+            </el-dropdown> -->
         </div>
         <div>最近查看</div>
         <ul class="recent-list">
@@ -25,7 +31,7 @@
         </ul>
     </div>
 </template>
-<style lang="less" scoped>
+<style lang="less">
 .right-sidebar{
     width:250px;
     height: 100%;
@@ -62,16 +68,14 @@
 }
 .right-sidebar__dropdown-menu{
     width:200px;
-    top:37px;
+    // top:37px;
     // left:0px;
     // right: 0px;
     // margin: 0 auto;
-    position:absolute;
-    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
-    background:#fff;
-    border: 1px solild #ebeef5;
-    padding: 5px 0px;
     box-sizing: border-box;
+    &.el-popper{
+        margin-top:0px;
+    }
     li{
         list-style: none;
         line-height: 36px;
