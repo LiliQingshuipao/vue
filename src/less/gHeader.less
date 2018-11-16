@@ -1,4 +1,15 @@
 .g-header{
-    height: 70px;
-    background-color: #ececec;
+    height: @gHeaderHeight;
+    line-height: @gHeaderHeight;
+    position: absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    text-align: left;
+    box-sizing: border-box;
+    padding:0 20px;
+    background:@gHeaderBgColor;
+    .g-header__logo{
+        cursor: pointer;
+    }
 }

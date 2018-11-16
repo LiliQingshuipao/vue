@@ -1,22 +1,35 @@
 <template>
-    <div class="cube">
-        <!-- <g-header></g-header> -->
-        <router-view></router-view>
+    <div class="base__framework" :class="sidebarToggle?'padding__left__toggle':''">
+        <g-header @iconClick="iconClick"></g-header>
+        <g-sidebar :sidebar-toggle="sidebarToggle" :class="sidebarToggle?'toggle':''"></g-sidebar>
+        <div class="base__container">
+            <router-view></router-view>
+        </div>
+        
     </div>
 </template>
-<style <style lang="less" scoped>
-    .cube{
-        width:100%;
-        height: 100%;
-        .editor-box{
-            width:100%;
-            height: 100%;
-        }
-    }
-</style>
 
 <script>
 
 export default {
+    data(){
+        return {
+            sidebarToggle:false
+        }
+    },
+    mounted(){
+        this.$proxy({
+            url: '/serv/script/gX9r/watsons/young/gender',
+            type:'post'
+        }).then(res =>{
+            console.log(res)
+        })
+    },
+    methods:{
+        
+        iconClick:function(){
+            this.sidebarToggle = !this.sidebarToggle
+        }
+    }
 }
 </script>

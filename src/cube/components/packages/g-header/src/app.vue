@@ -1,15 +1,15 @@
 <template>
     <div class="g-header">
-        <div>this is header</div>
+        <div class="g-header__logo" @click="iconClick"><Icon type="md-menu" /></div>
+        <div>this is header233</div>
     </div>
 </template>
+<style lang="less">
+    
+</style>
+
 <script>
 export default {
-    name: "g-header",
-    data(){
-        return {
-            
-        }
-    }
+    
 }
 </script>

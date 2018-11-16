@@ -6,17 +6,28 @@ import VueResource from 'vue-resource'
 import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import iView from 'iview'
+import './plugs/'
+import 'iview/dist/styles/iview.css'
 import './cube/components'
 import "./less/app.less"
 import $ from 'jquery'
 import Less from 'less'
 import './components/';
-console.log(Less)
 window.$ = $;
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.use(VueResource)
+Vue.use(iView)
 /* eslint-disable no-new */
+router.beforeEach((to,from,next) => {
+
+  iView.LoadingBar.start()
+  next()
+})
+router.afterEach((to,from) => {
+  iView.LoadingBar.finish()
+})
 new Vue({
   el: '#app',
   router,

@@ -13,7 +13,7 @@ export default new Router({
     {
       path: '/cube',
       name: 'cube',
-      redirect: "/cube/editor",
+      redirect: "/cube/main",
       component: resolve=>{
         require(["../cube/"],resolve)
       },
@@ -26,6 +26,11 @@ export default new Router({
         path:'drag',
         component:resolve => {
           require(["../cube/pages/drag"], resolve)
+        }
+      },{
+        path:'tooltip',
+        component:resolve => {
+          require(["../cube/pages/tooltip"], resolve)
         }
       },{
         path: 'project',
@@ -49,6 +54,24 @@ export default new Router({
               }
             }]
           }]
+        }]
+      },{
+        path: 'main',
+        component:resolve => {
+          require(['../cube/pages/main/MainFramework'], resolve)
+        },
+        children:[{
+          path:'list',
+          name: 'MainList',
+          component: resolve => {
+            require(['../cube/pages/main/list/MainList'],resolve)
+          },
+        },{
+          path: 'details',
+          name: 'MainDetails',
+          component: resolve => {
+            require(['../cube/pages/main/details/MainDetails'],resolve)
+          }
         }]
       }],
     }

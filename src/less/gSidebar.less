@@ -1,0 +1,65 @@
+.g-sidebar{
+    width:@gSidebarWidth;
+    height: calc(100% - @gHeaderHeight);
+    background: @gSidebarBgColor;
+    box-sizing: border-box;
+    color:@gSidebarColor;
+    font-size: 13px;
+    position: fixed;
+    top:@gHeaderHeight;
+    left:0px;
+    transition: width 0.2s ease-in;
+    .g-sidebar__list{
+        width:100%;
+        .g-sidebar__list__icon{
+            margin-right: 10px;
+        }
+        .g-sidebar__list__icon__right{
+            margin-left:10px;
+        }
+        .g-sidebar__list__item{
+            line-height: 30px;
+            width:100%;
+            .ellipsis;
+        }
+        .ivu-menu{
+            i{
+                transform: translateX(0px);
+                font-size: 16px;
+                transition: font-size .2s ease, transform .2s ease;
+            }
+        }
+    }
+    &.toggle{
+        width:@gSidebarWidthSmall;
+        .ivu-menu {
+            span{
+                display: none;
+            }
+            i{
+                transform: translateX(5px);
+                transition: font-size .2s ease .2s, transform .2s ease .2s;
+                vertical-align: middle;
+                font-size: 22px;
+            }
+
+        }
+        
+    }
+}
+
+.g-sidebar__item{
+    width:100%;
+    .g-sidebar__item__title{
+        width:100%;
+        .g-sidebar__item__title__name{
+            padding: 0 10px;
+        }
+    }
+    .g-sidebar__item__icon__right{
+        transition: all 0.2s ease-in;
+        &.toggle{
+            transform: rotate(180deg);
+        }
+    }
+}
